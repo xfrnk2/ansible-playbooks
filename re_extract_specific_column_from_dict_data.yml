@@ -1,0 +1,7 @@
+---
+- block:
+  - name: Re-extracting specific columns from dictionary data
+    debug:
+      msg={{ info }}
+  - set_fact:
+      info: "{{ info | dict2items | selectattr('key', 'in', ['stderr_lines', 'stdout_lines']) | list | items2dict }}"
