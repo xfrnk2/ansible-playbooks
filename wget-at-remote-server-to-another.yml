@@ -1,0 +1,4 @@
+---
+  - name: wget from remote server to another with port 80
+    shell: sshpass -p {{ target_password }} ssh -o StrictHostKeyChecking=no root@{{ target_ip }} 'wget --no-check-certificate http://{{ another_ip }}/myfile.txt; ls myfile.txt'
+    register: result
