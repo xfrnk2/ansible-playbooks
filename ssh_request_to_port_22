@@ -1,0 +1,4 @@
+---
+  - name: SSH request to port 22
+    shell: sshpass -p {{ password }} ssh -o StrictHostKeyChecking=no -tt root@{{ ip }} 'shell "[command] -l |grep [column]"'
+    register: result
