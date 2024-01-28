@@ -1,0 +1,5 @@
+
+  - name: pass variable to python script
+    shell: |
+      python3 ./python_script.py --ip="{{ target_ip }}" --password="{{ target_password }}" // Can be extended as needed
+    register: result
