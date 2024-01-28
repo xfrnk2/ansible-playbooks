@@ -1,6 +1,6 @@
 ---
 - block:
-  - name: Add new var to EOF
+  - name: Add new line with vars to EOF
     lineinfile:
       path: /etc/hosts
       line: "{{ some_ip }} {{ some_fqdn }}"
