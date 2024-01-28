@@ -1,0 +1,8 @@
+---
+- block:
+  - name: Add new var to EOF
+    lineinfile:
+      path: /etc/hosts
+      line: "{{ some_ip }} {{ some_fqdn }}"
+      insertafter: EOF
+      
