@@ -1,0 +1,5 @@
+---
+- name: Wait for a condition(sleep)
+  wait_for:
+    timeout: 5
+# wait_for: timeout=5
