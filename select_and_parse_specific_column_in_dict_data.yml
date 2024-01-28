@@ -1,0 +1,8 @@
+---
+- block:
+  - name: Select and parse specific columns in dictionary data.
+    debug:
+      msg={{ info }}
+      
+  - set_fact:
+      result: "{{ info['hosts']['target'] | to_json | from_json | json_query('[?key == `column`]') | json_query('[0]') }}" # You can access to a specific column by using dict['key_name']
