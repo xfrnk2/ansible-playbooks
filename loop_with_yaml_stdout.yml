@@ -1,0 +1,6 @@
+--- 
+  - name: loop with stdout yaml
+    include_tasks: next_task.yml
+    with_dict: "{{ output.stdout }}"
+    loop_control:
+      loop_var: item
