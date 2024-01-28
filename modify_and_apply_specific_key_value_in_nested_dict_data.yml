@@ -1,0 +1,9 @@
+---
+- block:
+  - name: Modifying and applying a specific key value in nested dictionary data.
+    debug:
+      msg={{ info }}
+  - set_fact:
+      id_to_add: 10.10.10.10
+  - set_fact:
+      info: "{{ info | combine ({ `ip_address`: info[`ip_address`] + [ip_to_add]})}}" # save changes(overwrite)
