@@ -1,0 +1,9 @@
+---
+- block:
+  - name: Parsing data with additional conditional statements in a regular expression then check
+    debug:
+      msg={{ info }}
+  - set_fact:
+      your_pattern: "^.*"
+  - set_fact:
+      result: "{{ info | select('regex', your_pattern) | list | count == 1 }}" # Boolean
