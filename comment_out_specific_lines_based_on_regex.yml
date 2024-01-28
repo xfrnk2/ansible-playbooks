@@ -1,0 +1,7 @@
+---
+- block:
+  - name: Comment out specific lines based on a regular expression
+    replace:
+      path: ./file
+      regexp: '[some expression]'
+      replace: '# \g<0>'
