@@ -1,0 +1,9 @@
+---
+- block:
+  - name: Create new yaml file
+    copy:
+      content: |
+        {% for key, value in dict.items() %}
+        {{ key }}: {{ value }}
+        {% endfor %}
+      dest: "./yamlfiles/{{ current_item_name }}.yml"
