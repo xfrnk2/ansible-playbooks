@@ -1,0 +1,4 @@
+--- 
+  - name: Extract the partial string value after the first dot in the ESXi host name
+    find_index: dot_index = {{ fqdn }}
+    register: pyres
