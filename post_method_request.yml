@@ -1,0 +1,11 @@
+---
+- block:
+    - name: Post method request
+      uri:
+        url: "https://{{ target_ip }}/something"
+        force_basic_auth: yes
+        validate_certs: no
+        method: POST
+        user: "{{ id }}"
+        password: "{{ password }}"
+      register: result
