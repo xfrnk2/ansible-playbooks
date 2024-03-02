@@ -1,0 +1,15 @@
+---
+- block:
+    - name: 
+      ansible.builtin.slurp:
+        src: "./file.txt"
+      register: contents
+
+    - name: convert to list of lines
+      set_fact:
+        lines: "{{ contents.content | b64decode | trim }}"
+
+    - name: iterate lines
+      include_tasks: some_task.yml
+      loop: "{{ lines.split('\n') }}"
+    
